@@ -1,0 +1,96 @@
+.stories-list-container {
+  width: 100%;
+  padding: 20px 0;
+  background: white;
+  border-bottom: 1px solid #dbdbdb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stories-list {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom scrollbar */
+.stories-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.stories-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.stories-list::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 3px;
+}
+
+.stories-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.no-stories-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #8e8e8e;
+  text-align: center;
+  min-width: 200px;
+}
+
+.no-stories-message p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.no-stories-message span {
+  font-size: 14px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .stories-list-container {
+    padding: 15px 0;
+  }
+
+  .stories-list {
+    gap: 15px;
+    padding: 0 15px;
+  }
+
+  .no-stories-message p {
+    font-size: 14px;
+  }
+
+  .no-stories-message span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stories-list-container {
+    padding: 12px 0;
+  }
+
+  .stories-list {
+    gap: 12px;
+    padding: 0 12px;
+  }
+
+  .stories-list::-webkit-scrollbar {
+    height: 4px;
+  }
+}
+

@@ -1,0 +1,284 @@
+.story-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Progress bars */
+.story-progress-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  gap: 4px;
+  z-index: 10001;
+}
+
+.story-progress-bar {
+  flex: 1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.story-progress-fill {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Header */
+.story-header {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10001;
+  padding: 12px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  border-radius: 8px 8px 0 0;
+}
+
+.story-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.story-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+}
+
+.story-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.story-username {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.story-timestamp {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+}
+
+.story-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.story-action-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.story-action-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.story-action-btn:active {
+  transform: scale(0.95);
+}
+
+/* Story content */
+.story-content {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 90vh;
+  cursor: pointer;
+}
+
+/* Navigation areas */
+.story-nav-left,
+.story-nav-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30%;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.story-nav-left {
+  left: 0;
+}
+
+.story-nav-right {
+  right: 0;
+}
+
+/* Swipe hint */
+.story-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  text-align: center;
+  z-index: 10001;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .story-progress-container {
+    width: 95%;
+    top: 15px;
+  }
+
+  .story-header {
+    width: 95%;
+    top: 30px;
+    padding: 10px;
+  }
+
+  .story-avatar {
+    width: 36px;
+    height: 36px;
+  }
+
+  .story-username {
+    font-size: 13px;
+  }
+
+  .story-timestamp {
+    font-size: 11px;
+  }
+
+  .story-action-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .story-content {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .story-hint {
+    font-size: 11px;
+    bottom: 20px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-progress-container {
+    gap: 3px;
+  }
+
+  .story-header {
+    padding: 8px;
+  }
+
+  .story-avatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  .story-username {
+    font-size: 12px;
+  }
+
+  .story-timestamp {
+    font-size: 10px;
+  }
+
+  .story-actions {
+    gap: 8px;
+  }
+
+  .story-action-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .story-hint {
+    font-size: 10px;
+    bottom: 15px;
+  }
+}
+
+/* Landscape mode on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .story-content {
+    max-height: 95vh;
+  }
+
+  .story-header {
+    top: 10px;
+  }
+
+  .story-progress-container {
+    top: 5px;
+  }
+
+  .story-hint {
+    bottom: 10px;
+  }
+}
+
